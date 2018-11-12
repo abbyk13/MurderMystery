@@ -6,7 +6,7 @@ myrtle_beech_intro = """Salutations. My name? Myrtle. Myrtle Beech. I am a woman
 def get_average_sentence_length(text):
     sentence_list = []
     sentence_lengths = []
-    sentence_list.append(text.split("."))
+    sentence_list = text.split(".", "!", "?")
     for sentence in sentence_list:
         sentence_lengths.append(len(sentence))
     numerator = 0
@@ -35,7 +35,7 @@ def build_frequency_table(corpus):
 
 def ngram_creator(text_list):
     ngram_list = []
-    for index in range(len(text_list) - 1):
+    for index in range(len(text_list) - 2):
         ngram_list.append(text_list[index] + " " + text_list[index + 1])
     return ngram_list
 
